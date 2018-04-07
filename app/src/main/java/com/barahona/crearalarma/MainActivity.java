@@ -25,19 +25,21 @@ public class MainActivity extends AppCompatActivity {
         setAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               TextView mssg = ((TextView)findViewById(R.id.editTextmssg));
+               TextView hour = (TextView)findViewById(R.id.editTextHour);
+               TextView minutes = (TextView)findViewById(R.id.editTextMinutes);
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(AlarmClock.ACTION_SET_ALARM);
-
-                    sendIntent.putExtra(AlarmClock.EXTRA_MESSAGE, ((TextView)findViewById(R.id.bttnset)).getText().toString());
-                    sendIntent.putExtra(AlarmClock.EXTRA_HOUR, Integer.parseInt(((TextView)findViewById(R.id.editTextHour)).getText().toString()));
-                    sendIntent.putExtra(AlarmClock.EXTRA_MINUTES, Integer.parseInt(((TextView)findViewById(R.id.editTextMinutes)).getText().toString()));
+                if((hour.length() < 3) & (minutes.length() < 3)){
+                    sendIntent.putExtra(AlarmClock.EXTRA_MESSAGE, mssg.getText().toString());
+                    sendIntent.putExtra(AlarmClock.EXTRA_HOUR, Integer.parseInt(hour.getText().toString()));
+                    sendIntent.putExtra(AlarmClock.EXTRA_MINUTES, Integer.parseInt(minutes.getText().toString()));
 
                     if (sendIntent.resolveActivity(getPackageManager()) != null){
                         startActivity(sendIntent);
-                        mensaje.setText("");
-                        minuto.setText("");
-                        hora.setText("");
                     }
+
+                }
             }
         });
     }
