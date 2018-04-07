@@ -6,13 +6,20 @@
     android:layout_height="match_parent"
     tools:context="com.barahona.crearalarma.MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/insertar"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"/>
     <LinearLayout
         android:id="@+id/lay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_margin="50dp"
+        android:layout_margin="60dp"
         android:layout_centerHorizontal="true">
         <EditText
             android:id="@+id/editTextHour"
@@ -39,15 +46,15 @@
         android:id="@+id/editTextmssg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:text="Message"
+        android:layout_margin="40dp"
+        android:text="@string/message"
         android:layout_below="@id/lay"
         android:layout_centerHorizontal="true"/>
     <Button
         android:id="@+id/bttnset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SET ALARM"
+        android:text="@string/crear"
         android:layout_below="@id/editTextmssg"
         android:layout_centerHorizontal="true"
         />

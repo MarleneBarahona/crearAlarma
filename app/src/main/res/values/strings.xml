@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">crearAlarma</string>
+    <string name="app_name">Crear Alarma</string>
+    <string name="insertar">Insertar alarma</string>
+    <string name="message">Mensaje</string>
+    <string name="crear">Crear alarma</string>
+
 </resources>
